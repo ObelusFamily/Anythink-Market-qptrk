@@ -19,11 +19,12 @@ const mapDispatchToProps = (dispatch) => ({
 
 const ItemPreview = (props) => {
   const item = props.item;
+  let image;
 
   if (item.image !== '') {
-    var image = item.image;
+    image = item.image;
   } else {
-    var image = '/placeholder.png';
+    image = '/placeholder.png';
   } 
 
   const handleClick = (ev) => {
