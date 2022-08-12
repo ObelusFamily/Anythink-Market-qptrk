@@ -20,6 +20,12 @@ const mapDispatchToProps = (dispatch) => ({
 const ItemPreview = (props) => {
   const item = props.item;
 
+  if (item.image !== '') {
+    var image = item.image;
+  } else {
+    var image = '/placeholder.png';
+  } 
+
   const handleClick = (ev) => {
     ev.preventDefault();
     if (item.favorited) {
@@ -28,8 +34,6 @@ const ItemPreview = (props) => {
       props.favorite(item.slug);
     }
   };
-
-  const image = (item.image !== '') ? item.image : '/placeholder.png';
 
   return (
     <div
