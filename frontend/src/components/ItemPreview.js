@@ -19,13 +19,10 @@ const mapDispatchToProps = (dispatch) => ({
 
 const ItemPreview = (props) => {
   const item = props.item;
-  let image;
 
-  if (item.image !== '') {
-    image = item.image;
-  } else {
-    image = '/placeholder.png';
-  } 
+  if (item.image === "") {
+    item.image = "/placeholder.png";
+  }
 
   const handleClick = (ev) => {
     ev.preventDefault();
